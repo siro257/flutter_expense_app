@@ -1,0 +1,6 @@
+import 'package:flutter/material.dart';
+
+const Color kPirmaryColor = Color.fromARGB(0xFF, 0x22, 0x28, 0x31);
+const Color kSecondaryColor = Color.fromARGB(0xFF, 0x39, 0x3E, 0x46);
+const Color kAccentColor = Color.fromARGB(0xFF, 0x00, 0xAD, 0xB5);
+const Color kTextColor = Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE);
