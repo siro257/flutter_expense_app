@@ -17,24 +17,25 @@ class ExpenseApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<ThemeMode>(
-        valueListenable: themeNotifier,
-        builder: (_, ThemeMode currentMode, __) {
-          return MaterialApp(
+      valueListenable: themeNotifier,
+      builder: (_, ThemeMode currentMode, __) {
+        return MaterialApp(
+          title: 'Expense App',
+          theme: ThemeData(
+            brightness: Brightness.light,
+            primarySwatch: generateMaterialColor(color: kTextColor),
+          ),
+          darkTheme: ThemeData(
+            brightness: Brightness.dark,
+          ),
+          themeMode: currentMode,
+          home: HomePage(
             title: 'Expense App',
-            theme: ThemeData(
-              brightness: Brightness.light,
-              primarySwatch: generateMaterialColor(color: kTextColor),
-            ),
-            darkTheme: ThemeData(
-              brightness: Brightness.dark,
-            ),
-            themeMode: currentMode,
-            home: HomePage(
-              title: 'Expense App',
-              themeNotifier: themeNotifier,
-              currentMode: currentMode,
-            ),
-          );
-        });
+            themeNotifier: themeNotifier,
+            currentMode: currentMode,
+          ),
+        );
+      },
+    );
   }
 }
